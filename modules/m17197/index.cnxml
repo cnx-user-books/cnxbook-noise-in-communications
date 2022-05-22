@@ -1,0 +1,1300 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Filtering of noise</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>75568941-9abf-4cf8-8fab-c8e8f831ffb1</md:uuid>
+</metadata>
+  <content>
+    <para id="element-158">We will see the effects on the power spectrum when noise is passed through a filter.</para><section id="id-928159109134">
+      <title>Filtered output:</title>
+      <para id="id45796907">If 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>h</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{h \( t \) } {}</m:annotation></m:semantics></m:math> is the impulse response, filtered output 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>o</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} }  \( t \) } {}</m:annotation></m:semantics></m:math> obtained by convolution.</para>
+      <equation id="id45797033">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>o</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mfenced open="(" close=")">
+                          <m:mi>t</m:mi>
+                        </m:mfenced>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mrow>
+                          <m:munderover>
+                            <m:mo stretchy="false">∫</m:mo>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:mo stretchy="false">−</m:mo>
+                                  <m:mo stretchy="false">∞</m:mo>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mo stretchy="false">∞</m:mo>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:munderover>
+                          <m:mrow>
+                            <m:msub>
+                              <m:mi>n</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>i</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                            <m:mfenced open="(" close=")">
+                              <m:mi>τ</m:mi>
+                            </m:mfenced>
+                            <m:mi>h</m:mi>
+                            <m:mfenced open="(" close=")">
+                              <m:mrow>
+                                <m:mi>t</m:mi>
+                                <m:mo stretchy="false">−</m:mo>
+                                <m:mi>τ</m:mi>
+                              </m:mrow>
+                            </m:mfenced>
+                            <m:mi fontstyle="italic">dτ</m:mi>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mrow>
+                        <m:munderover>
+                          <m:mo stretchy="false">∫</m:mo>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mrow>
+                                <m:mo stretchy="false">−</m:mo>
+                                <m:mo stretchy="false">∞</m:mo>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>t</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:munderover>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>n</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>i</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                          <m:mfenced open="(" close=")">
+                            <m:mi>τ</m:mi>
+                          </m:mfenced>
+                          <m:mi>h</m:mi>
+                          <m:mfenced open="(" close=")">
+                            <m:mrow>
+                              <m:mi>t</m:mi>
+                              <m:mo stretchy="false">−</m:mo>
+                              <m:mi>τ</m:mi>
+                            </m:mrow>
+                          </m:mfenced>
+                          <m:mi fontstyle="italic">dτ</m:mi>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} }  left (t right )= Int cSub { size 8{ -  infinity } }  cSup { size 8{ infinity } }  {n rSub { size 8{i} }  left (τ right )h left (t - τ right )dτ} = Int cSub { size 8{ -  infinity } }  cSup { size 8{t} }  {n rSub { size 8{i} }  left (τ right )h left (t - τ right )dτ} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45797254">
+        <item>Approximate continuous time by discrete interval.</item>
+      </list>
+      <equation id="id45797263">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>o</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>t</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:munder>
+                        <m:mtext>lim</m:mtext>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi fontstyle="italic">Δτ</m:mi>
+                              <m:mo stretchy="false">→</m:mo>
+                              <m:mn>0</m:mn>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:munder>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:munderover>
+                        <m:mo stretchy="false">∑</m:mo>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                              <m:mo stretchy="false">=</m:mo>
+                              <m:mrow>
+                                <m:mo stretchy="false">−</m:mo>
+                                <m:mo stretchy="false">∞</m:mo>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                              <m:mo stretchy="false">=</m:mo>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:munderover>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>n</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>i</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mfenced open="(" close=")">
+                          <m:mi fontstyle="italic">kΔτ</m:mi>
+                        </m:mfenced>
+                        <m:mi>h</m:mi>
+                        <m:mfenced open="(" close=")">
+                          <m:mrow>
+                            <m:mi>t</m:mi>
+                            <m:mo stretchy="false">−</m:mo>
+                            <m:mi fontstyle="italic">kΔτ</m:mi>
+                          </m:mrow>
+                        </m:mfenced>
+                        <m:mi fontstyle="italic">Δτ</m:mi>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} }  left (t right )= {"lim"}  cSub { size 8{Δτ rightarrow 0} }  Sum cSub { size 8{k= -  infinity } }  cSup { size 8{k= { size 6{t} } wideslash { size 6{Δτ} } } }  {n rSub { size 8{i} }  left (kΔτ right )h left (t - kΔτ right )Δτ} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45797445"><item>In the interval impulse response is deterministic and known, but 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math> depends on sample chosen, </item>
+        <item>For white Gaussian noise 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math> in interval k is different from and independent of that in interval l.</item>
+        <item> Thus output at any time 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>t</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>0</m:mn></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{t rSub { size 8{0} } } {}</m:annotation></m:semantics></m:math> is a linear superposition of independent Gaussian variables: hence it is Gaussian.</item>
+        <item>If we split filter 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>H</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H \( f \) } {}</m:annotation></m:semantics></m:math> into 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H rSub { size 8{1} }  \( f \) } {}</m:annotation></m:semantics></m:math> and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H rSub { size 8{2} }  \( f \) } {}</m:annotation></m:semantics></m:math>, output of 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H rSub { size 8{1} }  \( f \) } {}</m:annotation></m:semantics></m:math> is Gaussian but NOT white (due to filtering)</item>
+      </list>
+      <figure id="id45797941">
+        <media id="idp1995600" alt=""><image src="../../media/graphics1-9ad5.png" mime-type="image/png" height="199" width="389"/></media>
+      </figure>
+      <list list-type="bulleted" id="id45797965"><item>Hence output 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>o</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} } } {}</m:annotation></m:semantics></m:math> of 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H rSub { size 8{2} }  \( f \) } {}</m:annotation></m:semantics></m:math> is also non-white.</item>
+        <item>output 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msubsup><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>o</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>'</m:mi></m:mrow></m:mstyle></m:msubsup></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} }  rSup { size 8{'} } } {}</m:annotation></m:semantics></m:math> of 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H rSub { size 8{1} }  \( f \) } {}</m:annotation></m:semantics></m:math> is non-white, thus 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msubsup><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>o</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>'</m:mi></m:mrow></m:mstyle></m:msubsup></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} }  rSup { size 8{'} } } {}</m:annotation></m:semantics></m:math> in intervals k and l are dependent, but despite of this 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>o</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{o} } } {}</m:annotation></m:semantics></m:math> is Gaussian.</item>
+        <item> Hence superposition of non-white dependent Gaussian variables also gives Gaussian output.</item>
+      </list>
+    </section>
+    <section id="id-173568706324">
+      <title> Spectral components:</title>
+      <list list-type="bulleted" id="id45798405">
+        <item>Let spectral component k be</item>
+      </list>
+      <equation id="id45798425">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>k</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>t</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:msub>
+                        <m:mi>a</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mrow>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>ft</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:msub>
+                        <m:mi>b</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>sin</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mrow>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>ft</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:msub>
+                        <m:mi>c</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mfenced open="(" close=")">
+                      <m:mrow>
+                        <m:mn>2πkΔ</m:mn>
+                        <m:mrow>
+                          <m:mstyle fontstyle="italic">
+                            <m:mrow>
+                              <m:mtext>ft</m:mtext>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mo stretchy="false">+</m:mo>
+                          <m:msub>
+                            <m:mi>θ</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mfenced>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{k} }  left (t right )=a rSub { size 8{k} } "cos"2πkΔ ital "ft"+b rSub { size 8{k} } "sin"2πkΔ ital "ft"=c rSub { size 8{k} } "cos" left (2πkΔ ital "ft"+θ rSub { size 8{k} }  right )} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45798591">
+        <item>Then though coefficients are random over ensemble, they are deterministic for a specific case and depend on the particular sample chosen.</item>
+        <item>Hence spectral component is stationary but not ergodic.</item>
+        <item>Its normalized power is</item>
+      </list>
+      <equation id="id45798614">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mover accent="true">
+                          <m:msup>
+                            <m:mfenced open="[" close="]">
+                              <m:mrow>
+                                <m:msub>
+                                  <m:mi>n</m:mi>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mi>k</m:mi>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:msub>
+                                <m:mfenced open="(" close=")">
+                                  <m:mi>t</m:mi>
+                                </m:mfenced>
+                              </m:mrow>
+                            </m:mfenced>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msup>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mover accent="true">
+                        <m:msubsup>
+                          <m:mi>a</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mn>2</m:mn>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msubsup>
+                        <m:mo>¯</m:mo>
+                      </m:mover>
+                    </m:mrow>
+                    <m:msup>
+                      <m:mtext>cos</m:mtext>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mn>2</m:mn>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msup>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mrow>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>ft</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:mover accent="true">
+                        <m:msubsup>
+                          <m:mi>b</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mn>2</m:mn>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msubsup>
+                        <m:mo>¯</m:mo>
+                      </m:mover>
+                    </m:mrow>
+                    <m:msup>
+                      <m:mtext>sin</m:mtext>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mn>2</m:mn>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msup>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mrow>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>ft</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:mover accent="true">
+                        <m:mrow>
+                          <m:msub>
+                            <m:mn>2a</m:mn>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                          <m:msub>
+                            <m:mi>b</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                        </m:mrow>
+                        <m:mo>¯</m:mo>
+                      </m:mover>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                    <m:mtext>sin</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } = {overline  { left [n rSub { size 8{k} }  left (t right ) right ] rSup { size 8{2} } }} = {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} "cos" rSup { size 8{2} } 2πkΔ ital "ft"+ {overline  {b rSub { size 8{k} }  rSup { size 8{2} } }} "sin" rSup { size 8{2} } 2πkΔ ital "ft"+ {overline  {2a rSub { size 8{k} } b rSub { size 8{k} } }} "cos"2πkΔ ital "ft""sin"2πkΔ ital "ft"} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45798875"><item>As 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{k} }  \( t \) } {}</m:annotation></m:semantics></m:math> is stationary, t can be any time. Choose t as 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>t</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{t rSub { size 8{1} } } {}</m:annotation></m:semantics></m:math>when cosine is 1, sine is 0. Then</item>
+      </list>
+      <equation id="id45799007">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>P</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>k</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mover accent="true">
+                      <m:msubsup>
+                        <m:mi>a</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mn>2</m:mn>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mo>¯</m:mo>
+                    </m:mover>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } = {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id45799088">and similarly </para>
+      <equation id="id45799092">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>P</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>k</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mover accent="true">
+                      <m:msubsup>
+                        <m:mi>b</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mn>2</m:mn>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mo>¯</m:mo>
+                    </m:mover>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } = {overline  {b rSub { size 8{k} }  rSup { size 8{2} } }} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <equation id="id45799173">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:msub>
+                        <m:mn>2G</m:mn>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>n</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi fontstyle="italic">kΔf</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                    <m:mrow>
+                      <m:mi fontstyle="italic">Δf</m:mi>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mrow>
+                        <m:mo stretchy="false">−</m:mo>
+                        <m:msub>
+                          <m:mn>2G</m:mn>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>n</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi fontstyle="italic">kΔf</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mi fontstyle="italic">Δf</m:mi>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mover accent="true">
+                              <m:msubsup>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mn>2</m:mn>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msubsup>
+                              <m:mo>¯</m:mo>
+                            </m:mover>
+                          </m:mrow>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mover accent="true">
+                            <m:msubsup>
+                              <m:mi>b</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>k</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mn>2</m:mn>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msubsup>
+                            <m:mo>¯</m:mo>
+                          </m:mover>
+                        </m:mrow>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mfrac>
+                          <m:mrow>
+                            <m:mover accent="true">
+                              <m:msubsup>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mn>2</m:mn>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msubsup>
+                              <m:mo>¯</m:mo>
+                            </m:mover>
+                            <m:mo stretchy="false">+</m:mo>
+                            <m:mover accent="true">
+                              <m:msubsup>
+                                <m:mi>b</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mn>2</m:mn>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msubsup>
+                              <m:mo>¯</m:mo>
+                            </m:mover>
+                          </m:mrow>
+                          <m:mn>2</m:mn>
+                        </m:mfrac>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mfrac>
+                        <m:mover accent="true">
+                          <m:msubsup>
+                            <m:mi>c</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } =2G rSub { size 8{n} }  \( kΔf \) Δf= - 2G rSub { size 8{n} }  \( kΔf \) Δf= {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} = {overline  {b rSub { size 8{k} }  rSup { size 8{2} } }} = {  { {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} + {overline  {b rSub { size 8{k} }  rSup { size 8{2} } }} }  over  {2} } = {  { {overline  {c rSub { size 8{k} }  rSup { size 8{2} } }} }  over  {2} } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id45799451">Since</para>
+      <equation id="id45799455">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mover accent="true">
+                      <m:msubsup>
+                        <m:mi>a</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mn>2</m:mn>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mo>¯</m:mo>
+                    </m:mover>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mover accent="true">
+                      <m:msubsup>
+                        <m:mi>b</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mn>2</m:mn>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mo>¯</m:mo>
+                    </m:mover>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{ {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} = {overline  {b rSub { size 8{k} }  rSup { size 8{2} } }} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45799548"><item>Then 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>p</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{p rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math> can be written as showing a constant term and a sin-cos time dependent term.</item>
+      </list>
+      <equation id="id45799618">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mover accent="true">
+                        <m:msubsup>
+                          <m:mi>a</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mn>2</m:mn>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msubsup>
+                        <m:mo>¯</m:mo>
+                      </m:mover>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mrow>
+                          <m:msup>
+                            <m:mtext>cos</m:mtext>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msup>
+                          <m:mn>2πkΔ</m:mn>
+                          <m:mrow>
+                            <m:mstyle fontstyle="italic">
+                              <m:mrow>
+                                <m:mtext>ft</m:mtext>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mo stretchy="false">+</m:mo>
+                            <m:msup>
+                              <m:mtext>sin</m:mtext>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mn>2</m:mn>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msup>
+                          </m:mrow>
+                          <m:mn>2πkΔ</m:mn>
+                          <m:mstyle fontstyle="italic">
+                            <m:mrow>
+                              <m:mtext>ft</m:mtext>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:mrow>
+                      </m:mfenced>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:mover accent="true">
+                        <m:mrow>
+                          <m:msub>
+                            <m:mn>2a</m:mn>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                          <m:msub>
+                            <m:mi>b</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                        </m:mrow>
+                        <m:mo>¯</m:mo>
+                      </m:mover>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                    <m:mtext>sin</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } = {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }}  left ("cos" rSup { size 8{2} } 2πkΔ ital "ft"+"sin" rSup { size 8{2} } 2πkΔ ital "ft" right )+ {overline  {2a rSub { size 8{k} } b rSub { size 8{k} } }} "cos"2πkΔ ital "ft""sin"2πkΔ ital "ft"} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id45799809">thus</para>
+      <equation id="id45799813">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mrow>
+                        <m:mover accent="true">
+                          <m:msubsup>
+                            <m:mi>a</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                        <m:mo stretchy="false">+</m:mo>
+                        <m:mover accent="true">
+                          <m:mrow>
+                            <m:msub>
+                              <m:mn>2a</m:mn>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>k</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                            <m:msub>
+                              <m:mi>b</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>k</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                          </m:mrow>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                    <m:mtext>sin</m:mtext>
+                    <m:mn>2πkΔf</m:mn>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } = {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} + {overline  {2a rSub { size 8{k} } b rSub { size 8{k} } }} "cos"2πkΔ ital "ft""sin"2πkΔf} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45799945"><item>But 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>p</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{p rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math> is stationary and independent of time, so </item>
+      </list>
+      <equation id="id45800013">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mover accent="true">
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>a</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:msub>
+                          <m:mi>b</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                      </m:mrow>
+                      <m:mo>¯</m:mo>
+                    </m:mover>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{ {overline  {a rSub { size 8{k} } b rSub { size 8{k} } }} =0} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id45800091">Hence the coefficients are seen to be uncorrelated.</para>
+      <list list-type="bulleted" id="id45800096"><item>Also at
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>t</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{t rSub { size 8{1} } } {}</m:annotation></m:semantics></m:math>, we have 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:msub><m:mi>t</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">=</m:mo><m:msub><m:mi>a</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{k} }  \( t rSub { size 8{1} }  \) =a rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math>. But 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math> is Gaussian as it can be considered output of a narrowband filter whose input is Gaussian.</item>
+      </list>
+      <para id="id45800314">Thus 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>a</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{a rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math> and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>b</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{b rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math> are Gaussian.</para>
+      <list list-type="bulleted" id="id45800434"><item>Also 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>a</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{a rSub { size 8{k} } } {}</m:annotation></m:semantics></m:math> is output of filter in a non zero frequency interval k, it is not DC, thus mean value of 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>a</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{a rSub { size 8{k} } =0} {}</m:annotation></m:semantics></m:math>. Hence coefficients are Zero-mean Gaussian.</item>
+        <item> Taking product of two samples 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{k} }  \( t \) } {}</m:annotation></m:semantics></m:math> and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>n</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>l</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{l} }  \( t \) } {}</m:annotation></m:semantics></m:math> where</item>
+      </list>
+      <equation id="id45800714">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>k</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>t</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:msub>
+                        <m:mi>a</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mrow>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>ft</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:msub>
+                        <m:mi>b</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>sin</m:mtext>
+                    <m:mn>2πkΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{k} }  left (t right )=a rSub { size 8{k} } "cos"2πkΔ ital "ft"+b rSub { size 8{k} } "sin"2πkΔ ital "ft"} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <equation id="id45800831">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>l</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>t</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:msub>
+                        <m:mi>a</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>l</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>cos</m:mtext>
+                    <m:mn>2πlΔ</m:mn>
+                    <m:mrow>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>ft</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:msub>
+                        <m:mi>b</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>l</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mtext>sin</m:mtext>
+                    <m:mn>2πlΔ</m:mn>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>ft</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{l} }  left (t right )=a rSub { size 8{l} } "cos"2πlΔ ital "ft"+b rSub { size 8{l} } "sin"2πlΔ ital "ft"} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id45800946">The ensemble averages of the result must be independent of time as each component is stationary, hence</para>
+      <equation id="id45800952">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mover accent="true">
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>l</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                            </m:mrow>
+                            <m:mo>¯</m:mo>
+                          </m:mover>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mover accent="true">
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>b</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>l</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                            </m:mrow>
+                            <m:mo>¯</m:mo>
+                          </m:mover>
+                        </m:mrow>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mover accent="true">
+                          <m:mrow>
+                            <m:msub>
+                              <m:mi>b</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>k</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                            <m:msub>
+                              <m:mi>a</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>l</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                          </m:mrow>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mover accent="true">
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>b</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                          <m:msub>
+                            <m:mi>b</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>l</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                        </m:mrow>
+                        <m:mo>¯</m:mo>
+                      </m:mover>
+                    </m:mrow>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{ {overline  {a rSub { size 8{k} } a rSub { size 8{l} } }} = {overline  {a rSub { size 8{k} } b rSub { size 8{l} } }} = {overline  {b rSub { size 8{k} } a rSub { size 8{l} } }} = {overline  {b rSub { size 8{k} } b rSub { size 8{l} } }} =0} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id45801126">
+        <item>Hence coefficients at a given frequency are uncorrelated, and also coefficients at different frequencies are uncorrelated.</item>
+      </list>
+    </section>
+    <section id="id-847853421428">
+      <title>Summary of noise characteristics:</title>
+      <para id="id45801148">Random, Gaussian, Ergodic, Linear superposition of random spectral components with coefficients which are Gaussian, zero-mean, with variances related to power spectral density and uncorrelated with each other and with other coefficients at different frequencies. </para>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,248 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+  <title>Noise and Interference</title>
+
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m0515</md:content-id>
+  <md:title>Noise and Interference</md:title>
+  <md:abstract>Introduction to noise and noise filtering.
+</md:abstract>
+  <md:uuid>40445c81-371c-4ec9-bed0-797cbc910d23</md:uuid>
+</metadata>
+
+  <content>
+    <para id="intro"> We have mentioned that communications are, to
+      varying degrees, subject to interference and noise. It's time to
+      be more precise about what these quantities are and how they
+      differ.  </para>
+
+    <para id="second">
+      <term>Interference</term> represents man-made signals. Telephone
+      lines are subject to power-line interference (in the United
+      States a distorted 60 Hz sinusoid). Cellular telephone
+      channels are subject to adjacent-cell phone conversations using
+      the same signal frequency. The problem with such interference is
+      that it occupies the same frequency band as the desired
+      communication signal, and has a similar structure.
+    </para>
+
+    <exercise id="exer1">
+      <problem id="id1166981298030">
+	<para id="exer1a">
+	  Suppose interference occupied a different frequency band; how would
+	  the receiver remove it?
+	</para>
+      </problem>
+      <solution id="id1166997197693">
+	<para id="exer1b">
+	  If the interferer's spectrum does not overlap that of our
+	  communications channel—the interferer is
+	  out-of-band—we need only use a bandpass filter that
+	  selects our transmission band and removes other portions of
+	  the spectrum.
+	</para>
+      </solution>
+    </exercise>
+
+    <para id="third"> 
+
+      We use the notation 
+      <m:math><m:apply><m:ci type="fn">i</m:ci><m:ci>t</m:ci></m:apply>
+      </m:math> 
+      to represent interference. Because interference has man-made
+      structure, we can write an explicit expression for it that may contain
+      some unknown aspects (how large it is, for example).  
+    </para> 
+
+    <para id="fourth">
+      <term>Noise</term> signals have little structure and arise from
+      both human and natural sources.  Satellite channels are subject
+      to deep space noise arising from electromagnetic radiation
+      pervasive in the galaxy. Thermal noise plagues
+      <emphasis>all</emphasis> electronic circuits that contain
+      resistors. Thus, in receiving small amplitude signals, receiver
+      amplifiers will most certainly add noise as they boost the
+      signal's amplitude. All channels are subject to noise, and we
+      need a way of describing such signals despite the fact we can't
+      write a formula for the noise signal like we can for
+      interference. The most widely used noise model is <term>white
+      noise</term>. It is defined entirely by its frequency-domain
+      characteristics.  </para>
+
+    <list id="noise">
+      <item>
+	White noise has constant power at all frequencies.
+      </item>
+      <item>
+	At each frequency, the phase of the noise spectrum is totally
+	uncertain: It can be any value in between
+	<m:math><m:mn>0</m:mn></m:math> and
+	<m:math><m:apply><m:times/><m:cn>2</m:cn><m:ci>π</m:ci></m:apply></m:math>,
+	and its value at any frequency is unrelated to the phase at
+	any other frequency.
+      </item>
+      <item>
+	When noise signals arising from two different sources add, the
+	resultant noise signal has a power equal to the sum of the
+	component powers.
+      </item>
+    </list> 
+
+    <para id="power">Because of the emphasis here on frequency-domain power, we are
+      led to define the <term>power spectrum</term>. Because of <link document="m0047" target-id="parseval" strength="3">Parseval's
+      Theorem</link>, we define the power spectrum
+      <m:math><m:apply><m:ci type="fn"><m:msub><m:mi>P</m:mi><m:mi>s</m:mi></m:msub></m:ci><m:ci>f</m:ci></m:apply></m:math>
+      of a non-noise signal <m:math><m:apply><m:ci type="fn">s</m:ci><m:ci>t</m:ci></m:apply></m:math> to be the
+      magnitude-squared of its Fourier transform.
+
+      <equation id="a0000">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:ci type="fn"><m:msub>
+		  <m:mi>P</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub></m:ci>
+	      <m:ci>f</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:power/>
+	      <m:apply>
+		<m:abs/>
+		<m:apply>
+		  <m:ci type="fn">S</m:ci><m:ci>f</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  
+	</m:math>
+      </equation>
+
+      Integrating the power spectrum over any range of frequencies
+      equals the power the signal contains in that band. Because signals
+      <emphasis>must</emphasis> have negative frequency components that
+      mirror positive frequency ones, we routinely calculate the power in a
+      spectral band as the integral over positive frequencies multiplied by
+      two.
+      
+      <equation id="a0001">
+	<m:math>
+	  <m:mtext>Power in</m:mtext>
+	  <m:apply>
+	    <m:eq/>
+	    <m:interval>
+	      <m:ci><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub></m:ci>
+	      <m:ci><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub></m:ci>
+	    </m:interval> 
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:apply>
+		<m:int/><m:bvar><m:ci>f</m:ci></m:bvar>
+		<m:lowlimit>
+		  <m:ci><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub></m:ci>
+		</m:lowlimit>
+		<m:uplimit>
+		  <m:ci><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub></m:ci>
+		</m:uplimit>
+		<m:apply>
+		  <m:ci type="fn"><m:msub><m:mi>P</m:mi><m:mi>s</m:mi></m:msub></m:ci><m:ci>f</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Using the notation <m:math><m:apply><m:ci type="fn">n</m:ci><m:ci>t</m:ci></m:apply></m:math> to represent
+      a noise signal's waveform, we define noise in terms of its power
+      spectrum. For white noise, the power spectrum equals the
+      constant
+
+      <m:math> 
+	<m:apply>
+	  <m:divide/>
+	  <m:ci><m:msub><m:mi>N</m:mi><m:mn>0</m:mn></m:msub></m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>.  With
+      this definition, the power in a frequency band equals 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci><m:msub><m:mi>N</m:mi><m:mn>0</m:mn></m:msub></m:ci>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub></m:ci>
+	    <m:ci><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub></m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  
+    </para><para id="final"> 
+      When we pass a signal through a linear, time-invariant system, the
+      output's spectrum equals the <link document="m0048" target-id="spectrum" strength="3">product</link> of the system's
+      frequency response and the input's spectrum. Thus, the power
+      spectrum of the system's output is given by
+
+      <equation id="a0002">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn"><m:msub><m:mi>P</m:mi><m:mi>y</m:mi></m:msub></m:ci>
+	      <m:ci>f</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:power/>
+		<m:apply>
+		  <m:abs/>
+		  <m:apply>
+		    <m:ci type="fn">H</m:ci>
+		    <m:ci>f</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn"><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub></m:ci>
+		<m:ci>f</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math> 
+      </equation>
+
+      This result applies to noise signals as well. When we pass white
+      noise through a filter, the output is also a noise signal but with
+      power spectrum
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:apply>
+		<m:ci type="fn">H</m:ci>
+		<m:ci>f</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci><m:msub><m:mi>N</m:mi><m:mn>0</m:mn></m:msub></m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+    </para>
+    
+
+  </content>
+</document>

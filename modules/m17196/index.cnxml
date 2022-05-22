@@ -1,0 +1,948 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Characterization of noise</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f87e1123-d950-441f-bc94-f3220a52220c</md:uuid>
+</metadata>
+  <content>
+    <section id="id-481647503405">
+      <title>Types of noise:</title>
+      <list list-type="bulleted" id="id47006126">
+        <item>Thermal resistor noise: due to thermal agitation. Statistical fluctuations. Always random, erratic and unpredictable.</item>
+        <item>Shot noise: fluctuations in emission of electrons or crossing of junctions.</item>
+        <item>Additive channel noise: random disturbances added in the channel.</item>
+        <item>Multiplicative noise: created by non linear devices like diodes, mixers, power amplifiers.</item>
+      </list>
+    </section>
+    <section id="id-530934004439">
+      <title>Terminology:</title>
+      <list list-type="bulleted" id="id47116600">
+        <item>Noise is a Random variable best described by statistics like mean, variance, pdf etc.</item>
+        <item>Stationary process: always independent of time of measurement - same statistics any time</item>
+        <item>Ensemble statistics: measured at the same time on an ensemble (group) of sources</item>
+        <item>Ensemble statistics may be different from statistics of any member of group measured over time.</item>
+        <item>Ergodic: If ensemble and time statistics are same. ergodic is always stationary but Stationary is not always ergodic.</item>
+        <item>Noise from natural phenomenon Gaussian, ergodic &amp; stationary.</item>
+        <item>Nonlinear sources may not give Gaussian pdf e.g. rectifier. </item>
+      </list>
+    </section>
+    <section id="id-010821319696">
+      <title>Mathematical characterization:</title>
+      <para id="id47646677">Frequency domain description can be derived for periodic and pulse-like aperiodic phenomena.</para>
+      <list list-type="bulleted" id="id47647874">
+        <item>Noise is not repetitive and infinite in time. So not a periodic or aperiodic pulse type signal.</item>
+        <item>As an approximation take a sample of noise of interest from -T/2 to T/2 consider it repetitive.</item>
+        <item>Purely random so safely assume no DC exists. Now Fourier description applicable.</item>
+      </list>
+      <para id="id47723571">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>n</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>T</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mo stretchy="false">(</m:mo>
+                            <m:mi>s</m:mi>
+                            <m:mo stretchy="false">)</m:mo>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msubsup>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>t</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mrow>
+                        <m:munderover>
+                          <m:mo stretchy="false">∑</m:mo>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                                <m:mo stretchy="false">=</m:mo>
+                                <m:mn>1</m:mn>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mo stretchy="false">∞</m:mo>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:munderover>
+                        <m:mrow>
+                          <m:mfenced open="(" close=")">
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mtext>cos</m:mtext>
+                              <m:mn>2πkΔ</m:mn>
+                              <m:mrow>
+                                <m:mstyle fontstyle="italic">
+                                  <m:mrow>
+                                    <m:mtext>ft</m:mtext>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mo stretchy="false">+</m:mo>
+                                <m:msub>
+                                  <m:mi>b</m:mi>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mi>k</m:mi>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:msub>
+                              </m:mrow>
+                              <m:mtext>sin</m:mtext>
+                              <m:mn>2πkΔ</m:mn>
+                              <m:mstyle fontstyle="italic">
+                                <m:mrow>
+                                  <m:mtext>ft</m:mtext>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:mrow>
+                          </m:mfenced>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mrow>
+                            <m:munderover>
+                              <m:mo stretchy="false">∑</m:mo>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                    <m:mo stretchy="false">=</m:mo>
+                                    <m:mn>1</m:mn>
+                                  </m:mrow>
+                                </m:mrow>
+                              </m:mstyle>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mo stretchy="false">∞</m:mo>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:munderover>
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>c</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mtext>cos</m:mtext>
+                              <m:mfenced open="(" close=")">
+                                <m:mrow>
+                                  <m:mn>2πkΔ</m:mn>
+                                  <m:mrow>
+                                    <m:mstyle fontstyle="italic">
+                                      <m:mrow>
+                                        <m:mtext>ft</m:mtext>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                    <m:mo stretchy="false">+</m:mo>
+                                    <m:msub>
+                                      <m:mi>θ</m:mi>
+                                      <m:mstyle fontsize="8pt">
+                                        <m:mrow>
+                                          <m:mi>k</m:mi>
+                                        </m:mrow>
+                                      </m:mstyle>
+                                    </m:msub>
+                                  </m:mrow>
+                                </m:mrow>
+                              </m:mfenced>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n rSub { size 8{T} }  rSup { size 8{ \( s \) } }  left (t right )= Sum cSub { size 8{k=1} }  cSup { size 8{ infinity } }  { left (a rSub { size 8{k} } "cos"2πkΔ ital "ft"+b rSub { size 8{k} } "sin"2πkΔ ital "ft" right )= Sum cSub { size 8{k=1} }  cSup { size 8{ infinity } }  {c rSub { size 8{k} } "cos" left (2πkΔ ital "ft"+θ rSub { size 8{k} }  right )} } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </para>
+      <para id="id47121503">Also,</para>
+      <para id="id47736952"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mi>c</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msubsup><m:mo stretchy="false">=</m:mo><m:mrow><m:msubsup><m:mi>a</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msubsup><m:mo stretchy="false">+</m:mo><m:msubsup><m:mi>b</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msubsup></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{c rSub { size 8{k} }  rSup { size 8{2} } =a rSub { size 8{k} }  rSup { size 8{2} } +b rSub { size 8{k} }  rSup { size 8{2} } } {}</m:annotation></m:semantics></m:math>  and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:msub><m:mi>θ</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:mrow><m:mo stretchy="false">−</m:mo><m:msup><m:mtext>tan</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mo stretchy="false">−</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle></m:msup></m:mrow></m:mrow><m:mfrac><m:msub><m:mi>b</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub><m:msub><m:mi>a</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msub></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{θ rSub { size 8{k} } = - "tan" rSup { size 8{ - 1} }  {  {b rSub { size 8{k} } }  over  {a rSub { size 8{k} } } } } {}</m:annotation></m:semantics></m:math></para>
+      <list list-type="bulleted" id="id47665317">
+        <item>Two sided power spectrum and mean power spectral density may be derived</item>
+      </list>
+      <para id="id47756430">Power associated with each spectral term is </para>
+      
+      <equation id="id46993937">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mfrac>
+                      <m:msubsup>
+                        <m:mi>c</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mn>2</m:mn>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mn>2</m:mn>
+                    </m:mfrac>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:msubsup>
+                          <m:mi>a</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mn>2</m:mn>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msubsup>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                      <m:mo stretchy="false">+</m:mo>
+                      <m:mfrac>
+                        <m:msubsup>
+                          <m:mi>b</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mn>2</m:mn>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msubsup>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{ {  {c rSub { size 8{k} }  rSup { size 8{2} } }  over  {2} } = {  {a rSub { size 8{k} }  rSup { size 8{2} } }  over  {2} } + {  {b rSub { size 8{k} }  rSup { size 8{2} } }  over  {2} } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <figure id="id47719644">
+        <media id="idm15349952" alt=""><image src="../../media/graphics1-1936.png" mime-type="image/png" height="201" width="366"/></media>
+      </figure>
+      <para id="id47585052">The power spectral density at k∆f is</para>
+      <equation id="id47746657">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>G</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi fontstyle="italic">kΔf</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">≡</m:mo>
+                      <m:msub>
+                        <m:mi>G</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>n</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mfenced open="(" close=")">
+                          <m:mrow>
+                            <m:mo stretchy="false">−</m:mo>
+                            <m:mi fontstyle="italic">kΔf</m:mi>
+                          </m:mrow>
+                        </m:mfenced>
+                        <m:mo stretchy="false">≡</m:mo>
+                        <m:mfrac>
+                          <m:msubsup>
+                            <m:mi>c</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mn>4Δf</m:mn>
+                        </m:mfrac>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mfrac>
+                        <m:mrow>
+                          <m:msubsup>
+                            <m:mi>a</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mo stretchy="false">+</m:mo>
+                          <m:msubsup>
+                            <m:mi>b</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                        </m:mrow>
+                        <m:mn>4Δf</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{G rSub { size 8{n} }  left (kΔf right ) equiv G rSub { size 8{n} }  left ( - kΔf right ) equiv  {  {c rSub { size 8{k} }  rSup { size 8{2} } }  over  {4Δf} } = {  {a rSub { size 8{k} }  rSup { size 8{2} } +b rSub { size 8{k} }  rSup { size 8{2} } }  over  {4Δf} } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id47116508">And total power in ∆f at k∆f is</para>
+      <equation id="id47121542">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>k</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:msub>
+                        <m:mn>2G</m:mn>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi>n</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mfenced open="(" close=")">
+                      <m:mi fontstyle="italic">kΔf</m:mi>
+                    </m:mfenced>
+                    <m:mi fontstyle="italic">Δf</m:mi>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{k} } =2G rSub { size 8{n} }  left (kΔf right )Δf} {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id47631083">Half of this power is associated with k∆f and other half with -k∆f</para>
+      <list list-type="bulleted" id="id47719109">
+        <item>The power spectrum above is deterministic in the sense that it has been derived for a specific waveform, and hence the a,b,c values are specific calculable values. In the general case we can treat these as random variables, replace them by the ensemble average values.</item>
+        <item>Let T tend to infinity - and ∆f tend to 0. then the actual noise waveform results.</item>
+      </list>
+      <equation id="id47605901">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>t</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:munder>
+                        <m:mtext>lim</m:mtext>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi fontstyle="italic">Δf</m:mi>
+                              <m:mo stretchy="false">→</m:mo>
+                              <m:mn>0</m:mn>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:munder>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:munderover>
+                        <m:mo stretchy="false">∑</m:mo>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>k</m:mi>
+                              <m:mo stretchy="false">=</m:mo>
+                              <m:mn>1</m:mn>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mo stretchy="false">∞</m:mo>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:munderover>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mfenced open="(" close=")">
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>a</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>k</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mtext>cos</m:mtext>
+                              <m:mn>2πkΔ</m:mn>
+                              <m:mrow>
+                                <m:mstyle fontstyle="italic">
+                                  <m:mrow>
+                                    <m:mtext>ft</m:mtext>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mo stretchy="false">+</m:mo>
+                                <m:msub>
+                                  <m:mi>b</m:mi>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mi>k</m:mi>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:msub>
+                              </m:mrow>
+                              <m:mtext>sin</m:mtext>
+                              <m:mn>2πkΔ</m:mn>
+                              <m:mstyle fontstyle="italic">
+                                <m:mrow>
+                                  <m:mtext>ft</m:mtext>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:mrow>
+                          </m:mfenced>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:munder>
+                            <m:mtext>lim</m:mtext>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:mi fontstyle="italic">Δf</m:mi>
+                                  <m:mo stretchy="false">→</m:mo>
+                                  <m:mn>0</m:mn>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:munder>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:munderover>
+                            <m:mo stretchy="false">∑</m:mo>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:mi>k</m:mi>
+                                  <m:mo stretchy="false">=</m:mo>
+                                  <m:mn>1</m:mn>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mo stretchy="false">∞</m:mo>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:munderover>
+                          <m:mrow>
+                            <m:msub>
+                              <m:mi>c</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>k</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                            <m:mtext>cos</m:mtext>
+                            <m:mfenced open="(" close=")">
+                              <m:mrow>
+                                <m:mn>2πkΔ</m:mn>
+                                <m:mrow>
+                                  <m:mstyle fontstyle="italic">
+                                    <m:mrow>
+                                      <m:mtext>ft</m:mtext>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                  <m:mo stretchy="false">+</m:mo>
+                                  <m:msub>
+                                    <m:mi>θ</m:mi>
+                                    <m:mstyle fontsize="8pt">
+                                      <m:mrow>
+                                        <m:mi>k</m:mi>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                  </m:msub>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mfenced>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{n left (t right )= {"lim"}  cSub { size 8{Δf rightarrow 0} }  Sum cSub { size 8{k=1} }  cSup { size 8{ infinity } }  { left (a rSub { size 8{k} } "cos"2πkΔ ital "ft"+b rSub { size 8{k} } "sin"2πkΔ ital "ft" right )= {"lim"}  cSub { size 8{Δf rightarrow 0} }  Sum cSub { size 8{k=1} }  cSup { size 8{ infinity } }  {c rSub { size 8{k} } "cos" left (2πkΔ ital "ft"+θ rSub { size 8{k} }  right )} } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id47649610">
+        <item>Power contribution from coefficients is now replaced be mean square of the random coefficients which vary with chosen T or ensemble member.</item>
+      </list>
+      <para id="id47809306">Power spectral density can now be defined from mean square coefficients</para>
+      <list list-type="bulleted" id="id47809312">
+        <item>The Power spectral density then becomes</item>
+      </list>
+      <equation id="id47762272">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>G</m:mi>
+                      <m:mstyle fontsize="8pt">
+                        <m:mrow>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mfenced open="(" close=")">
+                        <m:mi>f</m:mi>
+                      </m:mfenced>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:munder>
+                        <m:mtext>lim</m:mtext>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi fontstyle="italic">Δf</m:mi>
+                              <m:mo stretchy="false">→</m:mo>
+                              <m:mn>0</m:mn>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:munder>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mover accent="true">
+                          <m:msubsup>
+                            <m:mi>c</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                        <m:mn>4Δf</m:mn>
+                      </m:mfrac>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:munder>
+                        <m:mtext>lim</m:mtext>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi fontstyle="italic">Δf</m:mi>
+                              <m:mo stretchy="false">→</m:mo>
+                              <m:mn>0</m:mn>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:munder>
+                    </m:mrow>
+                    <m:mfrac>
+                      <m:mrow>
+                        <m:mover accent="true">
+                          <m:msubsup>
+                            <m:mi>a</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                        <m:mo stretchy="false">+</m:mo>
+                        <m:mover accent="true">
+                          <m:msubsup>
+                            <m:mi>b</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>k</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mn>2</m:mn>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                      </m:mrow>
+                      <m:mn>4Δf</m:mn>
+                    </m:mfrac>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{G rSub { size 8{n} }  left (f right )= {"lim"}  cSub { size 8{Δf rightarrow 0} }  {  { {overline  {c rSub { size 8{k} }  rSup { size 8{2} } }} }  over  {4Δf} } = {"lim"}  cSub { size 8{Δf rightarrow 0} }  {  { {overline  {a rSub { size 8{k} }  rSup { size 8{2} } }} + {overline  {b rSub { size 8{k} }  rSup { size 8{2} } }} }  over  {4Δf} } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id47637782">
+        <item>The power in the frequency range f1 to f2 is given by</item>
+      </list>
+      <equation id="id47605786">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mi>P</m:mi>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mfenced open="(" close=")">
+                          <m:mrow>
+                            <m:msub>
+                              <m:mi>f</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mn>1</m:mn>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                            <m:mo stretchy="false">→</m:mo>
+                            <m:msub>
+                              <m:mi>f</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mn>2</m:mn>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                          </m:mrow>
+                        </m:mfenced>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:msubsup>
+                              <m:mo stretchy="false">∫</m:mo>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mrow>
+                                    <m:mo stretchy="false">−</m:mo>
+                                    <m:mi fontstyle="italic">f2</m:mi>
+                                  </m:mrow>
+                                </m:mrow>
+                              </m:mstyle>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mrow>
+                                    <m:mo stretchy="false">−</m:mo>
+                                    <m:mi fontstyle="italic">f1</m:mi>
+                                  </m:mrow>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msubsup>
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>G</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>n</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mfenced open="(" close=")">
+                                <m:mi>f</m:mi>
+                              </m:mfenced>
+                              <m:mstyle fontstyle="italic">
+                                <m:mrow>
+                                  <m:mtext>df</m:mtext>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:mrow>
+                          </m:mrow>
+                          <m:mo stretchy="false">+</m:mo>
+                          <m:mrow>
+                            <m:msubsup>
+                              <m:mo stretchy="false">∫</m:mo>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi fontstyle="italic">f1</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi fontstyle="italic">f2</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msubsup>
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>G</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>n</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mfenced open="(" close=")">
+                                <m:mi>f</m:mi>
+                              </m:mfenced>
+                              <m:mstyle fontstyle="italic">
+                                <m:mrow>
+                                  <m:mtext>df</m:mtext>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mo stretchy="false">∫</m:mo>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi fontstyle="italic">f1</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mi fontstyle="italic">f2</m:mi>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>G</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>n</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mfenced open="(" close=")">
+                          <m:mi>f</m:mi>
+                        </m:mfenced>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>df</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P left (f rSub { size 8{1} }  rightarrow f rSub { size 8{2} }  right )= Int rSub { size 8{ - f2} }  rSup { size 8{ - f1} }  {G rSub { size 8{n} }  left (f right ) ital "df"} + Int rSub { size 8{f1} }  rSup { size 8{f2} }  {G rSub { size 8{n} }  left (f right ) ital "df"} =2 Int rSub { size 8{f1} }  rSup { size 8{f2} }  {G rSub { size 8{n} }  left (f right ) ital "df"} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <list list-type="bulleted" id="id47177734">
+        <item>And total power PT is</item>
+      </list>
+      <equation id="id47644429">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>T</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mrow>
+                          <m:msubsup>
+                            <m:mo stretchy="false">∫</m:mo>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:mo stretchy="false">−</m:mo>
+                                  <m:mo stretchy="false">∞</m:mo>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mo stretchy="false">∞</m:mo>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                          <m:mrow>
+                            <m:msub>
+                              <m:mi>G</m:mi>
+                              <m:mstyle fontsize="8pt">
+                                <m:mrow>
+                                  <m:mi>n</m:mi>
+                                </m:mrow>
+                              </m:mstyle>
+                            </m:msub>
+                            <m:mfenced open="(" close=")">
+                              <m:mi>f</m:mi>
+                            </m:mfenced>
+                            <m:mstyle fontstyle="italic">
+                              <m:mrow>
+                                <m:mtext>df</m:mtext>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mo stretchy="false">∫</m:mo>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mn>0</m:mn>
+                          </m:mrow>
+                        </m:mstyle>
+                        <m:mstyle fontsize="8pt">
+                          <m:mrow>
+                            <m:mo stretchy="false">∞</m:mo>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>G</m:mi>
+                          <m:mstyle fontsize="8pt">
+                            <m:mrow>
+                              <m:mi>n</m:mi>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mfenced open="(" close=")">
+                          <m:mi>f</m:mi>
+                        </m:mfenced>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>df</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{T} } = Int rSub { size 8{ -  infinity } }  rSup { size 8{ infinity } }  {G rSub { size 8{n} }  left (f right ) ital "df"} =2 Int rSub { size 8{0} }  rSup { size 8{ infinity } }  {G rSub { size 8{n} }  left (f right ) ital "df"} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+    </section>
+  </content>
+</document>
